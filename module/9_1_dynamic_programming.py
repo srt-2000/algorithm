@@ -54,7 +54,7 @@ class DynamicSelection:
         return selected_items
 
 
-with open("data/9_1_data.json", "r") as file:
+with open("../data/9_1_data.json", "r") as file:
     items = json.load(file)
 for i in items:
     items[i] = tuple(items[i])

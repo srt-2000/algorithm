@@ -29,12 +29,12 @@ class BestPath:
             node = self.find_lower_costs_node(costs_gr)
         return self.processed
 
-with open("data/7_1_graph_data.json", "r") as file1:
+with open("../data/7_1_graph_data.json", "r") as file1:
     graph = json.load(file1)
-with open("data/7_1_costs_data.json", "r") as file2:
+with open("../data/7_1_costs_data.json", "r") as file2:
     costs = json.load(file2)
 costs["fin"] = float("inf")
-with open("data/7_1_parents_data.json", "r") as file3:
+with open("../data/7_1_parents_data.json", "r") as file3:
     parents = json.load(file3)
 
 a = BestPath()

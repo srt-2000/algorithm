@@ -30,7 +30,7 @@ class MSearcher:
         print(f"There are not mango-sellers in {self.name}s friends circle")
         return False
 
-with open('data/6_1_data.json', 'r') as data:
+with open('../data/6_1_data.json', 'r') as data:
     graph = json.load(data)
 
 print("Hello!\nI'm a finder if a mango-seller (name has 'm' at tne end) in friends circle.\nPlease, have a look on this graph.\n")

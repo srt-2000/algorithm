@@ -20,7 +20,7 @@ class NNPrediction:
 
         return sum(self.predict_arr[:3]) / n
 
-with open("data/10_1_data.json", "r") as file:
+with open("../data/10_1_data.json", "r") as file:
     bread_stat = json.load(file)
 bread_stat = {int(k):v for k,v in bread_stat.items()}
 condition = [4, 1, 0]

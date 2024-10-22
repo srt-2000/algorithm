@@ -41,7 +41,7 @@ plt.plot(normalized_tone[:1000])
 plt.suptitle('Mixed and normalised signal')
 plt.show()
 #write signal audio
-write("data/mysinewave.wav", sample_rate, normalized_tone)
+write("../data/mysinewave.wav", sample_rate, normalized_tone)
 
 print("\nNext we start Fourier convertion to make the signal frequency spectrum.\nLook on the figure 3, then click X.")
 #Fourier convertion to make the signal frequency spectrum

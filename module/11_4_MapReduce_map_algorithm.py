@@ -10,7 +10,7 @@ class Sqr:
         self.result = map(lambda x: x ** 2, a_)
         return list(self.result)
 
-with open("data/11_4_data.json", "r") as file:
+with open("../data/11_4_data.json", "r") as file:
     a = json.load(file)
 
 b = Sqr()

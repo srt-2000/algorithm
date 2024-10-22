@@ -11,7 +11,7 @@ class PathFinder:
             self.distance += min(street_gr[i].values())
         print(f"optimal postman path is {self.postman_path} with distance {self.distance} km")
 
-with open("data/8_1_data.json", "r") as file:
+with open("../data/8_1_data.json", "r") as file:
     street = json.load(file)
 
 for key, value in street.items():

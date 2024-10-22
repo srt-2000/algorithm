@@ -1,7 +1,12 @@
-import json
-
-with open("data/10_1_data.json", "r") as file:
-    bread_stat = json.load(file)
-bread_stat = {int(k):v for k,v in bread_stat.items()}
-
-print(bread_stat)
+n = int(input())
+temp = []
+temp.append(int(n))
+response = 0
+for line in range(n):
+    temp.append(int(input()))
+qnt_ab_one = sum(temp[1::])
+qnt_ab_double = 0
+for i in temp[1::]:
+    if i // 2 != 0:
+        qnt_ab_double += i // 2
+print(qnt_ab_double // qnt_ab_one)

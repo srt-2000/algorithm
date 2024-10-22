@@ -15,7 +15,7 @@ class RedFun:
         self.lst = lst
         return functools.reduce(lambda a, b: a if a > b else b, self.lst)
 
-with open("data/11_5_data.json", "r") as file:
+with open("../data/11_5_data.json", "r") as file:
     test_list = json.load(file)
 l = RedFun()
 

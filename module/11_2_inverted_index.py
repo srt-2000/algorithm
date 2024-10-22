@@ -14,7 +14,7 @@ class WordFinder:
         if self.word not in self.word_table:
             print("there is no this word on our pages, sorry")
 
-with open("data/11_2_data.json", "r") as file:
+with open("../data/11_2_data.json", "r") as file:
     inv_hash = json.load(file)
 
 a = "hi there"
