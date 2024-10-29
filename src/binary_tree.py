@@ -21,18 +21,3 @@ class TreeNode:
             self.in_order(node.left)
             print(node.val, end=' ')
             self.in_order(node.right)
-
-Tree = TreeNode(1)
-Tree.left = TreeNode(2)
-Tree.right = TreeNode(3)
-Tree.left.left = TreeNode(4)
-Tree.left.right = TreeNode(5)
-Tree.right.left = TreeNode(6)
-Tree.right.right = TreeNode(7)
-
-print("\nBinary-Tree Pre-order parsing:")
-Tree.pre_order(Tree)
-print("\nBinary-Tree Post-order parsing:")
-Tree.post_order(Tree)
-print("\nBinary-Tree In-order parsing")
-Tree.in_order(Tree)

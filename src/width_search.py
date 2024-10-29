@@ -1,5 +1,4 @@
 from collections import deque
-import json
 
 class MSearcher:
 
@@ -29,12 +28,3 @@ class MSearcher:
         print("I've already checked this friends:\n", self.searched)
         print(f"There are not mango-sellers in {self.name}s friends circle")
         return False
-
-with open('../data/6_1_data.json', 'r') as data:
-    graph = json.load(data)
-
-print("Hello!\nI'm a finder if a mango-seller (name has 'm' at tne end) in friends circle.\nPlease, have a look on this graph.\n")
-print(graph, "\n\nAnd write the name you want to check.")
-a = str(input("Name:"))
-b = MSearcher()
-b.search_mango_seller(a, graph)

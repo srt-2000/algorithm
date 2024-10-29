@@ -10,8 +10,3 @@ class CountDown:
             return self.range_of_row
         else:
             return self.down_row(range_of_row - 1)
-
-print("Hello!\nI'm the countdown function with recursion algorithm\n")
-a = int(input("Enter the countdown range: "))
-c = CountDown()
-c.down_row(a)

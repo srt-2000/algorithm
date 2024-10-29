@@ -31,12 +31,3 @@ class DHProtocol:
 
         print("Secret key for Alice is:", ka)
         print("Secret key for Bob is:", kb)
-
-print("It's a Diffie Hellman algorithm.\n")
-print("Alice and Bob agree upon the public keys G and P")
-print("Input a number = public key P:", end="")
-P = int(input())
-print("Input a number = public key G:", end="")
-G = int(input())
-DH = DHProtocol()
-DH.dh_calculate(P, G)

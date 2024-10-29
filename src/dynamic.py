@@ -1,5 +1,3 @@
-import json
-
 class DynamicSelection:
 
     def __init__(self):
@@ -52,17 +50,3 @@ class DynamicSelection:
                 if value == search:
                     selected_items.append(key)
         return selected_items
-
-
-with open("../data/9_1_data.json", "r") as file:
-    items = json.load(file)
-for i in items:
-    items[i] = tuple(items[i])
-
-print(f"Hi, I'm a dynamic programming algorithm.\n"
-      f"Let's select the most expensive things into my backpack.\n"
-      f"\nWe have things (weight, cost):\n{items}\n"
-      f"My backpack weight limit is 4 kg.\n")
-a = DynamicSelection()
-select = a.get_selected_items(items)
-print(f"And I've chosen the best combination for us:\n{select}")

@@ -28,17 +28,4 @@ class BloomFilter(object):
                 return True
         return False
 
-bloom_filter = BloomFilter(1000000, 100000)
-base_ip = "192.168.1."
-bloom_filter.add_to_filter(base_ip + str(1))
-bloom_filter.add_to_filter(base_ip + str(98))
-bloom_filter.add_to_filter(base_ip + str(101))
-
-print(f"A Bloom filter for negative IP address.\nWe have a base IP:{base_ip}\nAnd we add some sample ens for 3 addresses in filter: 1, 98, 101")
-print("If we have a very large massive with 100000 IP,\nand we have to find IPs which are not allowed,\nwe use Bloom filter:\n")
-
-for i in range(1, 100000):
-    if not bloom_filter.check_is_not_in_filter(base_ip + str(i)):
-        print(base_ip + str(i))
-
 #https://habr.com/ru/companies/otus/articles/541378/
