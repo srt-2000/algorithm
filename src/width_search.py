@@ -1,5 +1,6 @@
 from collections import deque
 
+
 class MSearcher:
 
     def __init__(self):

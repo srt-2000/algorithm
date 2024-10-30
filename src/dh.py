@@ -11,14 +11,14 @@ class DHProtocol:
         print("The value of P:", self.p)
         print("The value of G:", self.g)
 
-        #It is the chosen Alise private key
+        # It is the chosen Alise private key
         a = 4
         print("The private key a for Alice:", a)
 
         # Gets the generated key
         x = pow(g, a, p)
 
-        #It is the chosen Bob private key
+        # It is the chosen Bob private key
         b = 3
         print("The private key b for Bob:", b)
 

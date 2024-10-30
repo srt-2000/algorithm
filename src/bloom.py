@@ -1,5 +1,6 @@
 from bitarray import bitarray
 
+
 class BloomFilter(object):
 
     def __init__(self, size, number_expected_elements=100000):
@@ -7,7 +8,7 @@ class BloomFilter(object):
         self.number_expected_elements = number_expected_elements
         self.bloom_filter = bitarray(self.size)
         self.bloom_filter.setall(0)
-        self.number_hash_functions = round(self.size/self.number_expected_elements)
+        self.number_hash_functions = round(self.size / self.number_expected_elements)
 
     def _hash_djb2(self, s):
         our_hash = 5381
@@ -28,4 +29,4 @@ class BloomFilter(object):
                 return True
         return False
 
-#https://habr.com/ru/companies/otus/articles/541378/
+# https://habr.com/ru/companies/otus/articles/541378/

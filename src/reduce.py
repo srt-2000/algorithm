@@ -1,5 +1,6 @@
 import functools
 
+
 class RedFun:
 
     def __init__(self):

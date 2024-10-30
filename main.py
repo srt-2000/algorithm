@@ -1,4 +1,4 @@
-#import libs and modules
+# import libs and modules
 import click
 import json
 
@@ -22,12 +22,14 @@ from src.recurtion2 import FactorialCalculate
 from src.reduce import RedFun
 from src.width_search import MSearcher
 
-#create command's group
+
+# create command's group
 @click.group
 def app_commands():
     pass
 
-#binary search algorithm command
+
+# binary search algorithm command
 @click.command(help="binary search algorithm")
 @click.option(
     "--mx",
@@ -37,20 +39,21 @@ def app_commands():
            "\nI'll find the index of item you want very fast"
            "\n\nEnter the maximum number of sorted array",
     help="You have to enter max value of list"
-    )
+)
 @click.option(
     "--find",
     type=int,
     prompt="Enter the digit we want to find",
     help="You have to enter the value what index you want to find"
-    )
+)
 def bs(mx, find):
     my_list = [n for n in range(1, mx + 1)]
     click.echo(f"\nWe have a  sorted list from 0 to {mx}")
     position = PositionFinder()
     click.echo(f"\nFIND!!!\n{position.bin_search(my_list, find)} is position of {find}")
 
-#binary Tree algorithm command
+
+# binary Tree algorithm command
 @click.command(help="binary tree parsing")
 @click.option(
     "--ptype",
@@ -58,7 +61,7 @@ def bs(mx, find):
            "\nEnter the parsing type for our binary tree",
     type=click.Choice(["pre", "post", "in"]),
     help="You have to enter max the parsing type, choose pre, post or in"
-    )
+)
 def bt(ptype):
     tree = TreeNode(1)
     tree.left = TreeNode(2)
@@ -81,7 +84,8 @@ def bt(ptype):
         tree.in_order(tree)
         click.echo("\n")
 
-#Bloom filter algorithm command
+
+# Bloom filter algorithm command
 @click.command(help="Bloom filter algorithm")
 def bf():
     bloom_filter = BloomFilter(1000000, 100000)
@@ -95,13 +99,14 @@ def bf():
         "\nIf we have a very large massive with 100000 IP,"
         "\nand we have to find IPs which are not allowed,"
         "\nwe use Bloom filter:\n"
-        )
+    )
 
     for i in range(1, 100000):
         if not bloom_filter.check_is_not_in_filter(base_ip + str(i)):
             click.echo(base_ip + str(i))
 
-#Diffie–Hellman algorithm
+
+# Diffie–Hellman algorithm
 @click.command(help="Diffie–Hellman algorithm")
 @click.option(
     "--p",
@@ -110,18 +115,19 @@ def bf():
            "Alice and Bob agree upon the public keys G and P\n"
            "Input a number = public key P",
     help="You have to input a number = public key P"
-    )
+)
 @click.option(
     "--g",
     type=int,
     prompt="Input a number = public key G",
     help="You have to input a number = public key G"
-    )
+)
 def dh(p, g):
     d_h = DHProtocol()
     d_h.dh_calculate(p, g)
 
-#Dijkstra algorithm
+
+# Dijkstra algorithm
 @click.command(help="Dijkstra algorithm")
 def dk():
     with open("data/7_1_graph_data.json", "r") as file1:
@@ -138,7 +144,9 @@ def dk():
     click.echo(f"We have a graph with different paths to get our point:\n {graph} \n")
     click.echo("I've used the DSA Dijkstra's Algorithm and found our minimal trip\n"
                f"{['start'] + path[:(path.index("fin") + 1):]}")
-#dynamic programming
+
+
+# dynamic programming
 @click.command(help="Dynamic programming algorithm")
 def dc():
     with open("data/9_1_data.json", "r") as file:
@@ -156,12 +164,14 @@ def dc():
     select = a.get_selected_items(items)
     click.echo(f"And I've chosen the best combination for us:\n{select}")
 
-#Fourier transform
+
+# Fourier transform
 @click.command(help="Fourier transform")
 def fr():
     import src.fourier
 
-#greedy algorithm
+
+# greedy algorithm
 @click.command(help="Greedy algorithm")
 def gr():
     with open("data/8_1_data.json", "r") as file:
@@ -173,16 +183,17 @@ def gr():
     b = PathFinder()
     b.find_postman_path(street)
 
-#hash tables version 1
+
+# hash tables version 1
 @click.command(help="Hash tables version 1")
 @click.option(
     "--qnt",
     type=int,
     prompt="I'm a check voted function with hash table"
-            "\nI'll control and check the list of voters"
-            "\nInput how many people have come to vote",
+           "\nI'll control and check the list of voters"
+           "\nInput how many people have come to vote",
     help="You have input a planned quantity of voters"
-    )
+)
 def ht1(qnt):
     voted = {}
     checker = VoteChecker(voted)
@@ -193,7 +204,8 @@ def ht1(qnt):
         checker.check_vote(voter_name)
     click.echo(f"\nOur voted list\n{voted}")
 
-#hash tables version 1
+
+# hash tables version 1
 @click.command(help="Hash tables version 2")
 def ht2():
     with open("data/5_2_data.json", "r") as file:
@@ -209,7 +221,8 @@ def ht2():
         print(tester.get_cache(url, page))
     click.echo("\nYou've done all of your attempts")
 
-#inverted index algorithm example
+
+# inverted index algorithm example
 @click.command(help="Inverted index algorithm")
 @click.option(
     "--word",
@@ -221,14 +234,15 @@ def ht2():
            "\nInput word from phrases and fin the pages",
     type=click.Choice(["hi", "there", "adit", "we", "go"]),
     help="Input word from phrases and fin the pages"
-    )
+)
 def ih(word):
     with open("data/11_2_data.json", "r") as file:
         inv_hash = json.load(file)
     f = WordFinder()
     f.find_world(word, inv_hash)
 
-#map function
+
+# map function
 @click.command(help="Map function")
 def mp():
     with open("data/11_4_data.json", "r") as file:
@@ -241,7 +255,8 @@ def mp():
         f"\nAnd we've powered every element with map function:{b.sqr_arr(a)}"
     )
 
-#nearest neighbours algorithm
+
+# nearest neighbours algorithm
 @click.command(help="Nearest neighbours algorithm")
 @click.argument("condition", type=list, default=[4, 1, 0])
 @click.argument("neighbours_number", type=int, default=3)
@@ -261,7 +276,8 @@ def nn(condition, neighbours_number):
         f"\n{a.predict_bread_sales(bread_stat, condition, neighbours_number)} breads"
     )
 
-#Sorting function with recursion
+
+# Sorting function with recursion
 @click.command(help="Sorting function with recursion")
 def qsr():
     click.echo("The quick sort function with recursion algorithm")
@@ -269,7 +285,8 @@ def qsr():
     b = QuickSort()
     click.echo(f"Here is your sorted array: {b.sorted(a)}")
 
-#Array multiplicative function
+
+# Array multiplicative function
 @click.command(help="Array multiplicative function")
 def mm():
     click.echo("Multiplication array function")
@@ -277,7 +294,8 @@ def mm():
     b = MultipleMatrix()
     click.echo(f"Here is your multiplicated matrix: {b.mult_matrix(a)}")
 
-#Sum function with recursion
+
+# Sum function with recursion
 @click.command(help="Sum function with recursion")
 def sm():
     click.echo("Sum function with recursion algorithm.")
@@ -285,7 +303,8 @@ def sm():
     b = Summator()
     click.echo(f"The sum of your array is: {b.array_sum(a)}")
 
-#Countdown function with recursion
+
+# Countdown function with recursion
 @click.command(help="Countdown function with recursion")
 @click.option(
     "--rng",
@@ -298,7 +317,8 @@ def cr(rng):
     c = CountDown()
     c.down_row(rng)
 
-#Factorial calculating function with recursion
+
+# Factorial calculating function with recursion
 @click.command(help="Factorial calculating function with recursion")
 @click.option(
     "--fn",
@@ -311,7 +331,8 @@ def fc(fn):
     f = FactorialCalculate()
     click.echo(f"The factorial of {fn} is {f.fa_calc(fn)}")
 
-#Reduce function
+
+# Reduce function
 @click.command(help="Reduce function")
 def rc():
     with open("data/11_5_data.json", "r") as file:
@@ -324,7 +345,8 @@ def rc():
         f"\nThe maximum element in test_list is:{l.arr_max(test_list)}"
     )
 
-#Width search algorithm
+
+# Width search algorithm
 @click.command(help="Width search algorithm")
 @click.option(
     "--name",
@@ -341,7 +363,8 @@ def ws(name):
     b = MSearcher()
     b.search_mango_seller(name, graph)
 
-#adding commands into group
+
+# adding commands into group
 app_commands.add_command(bf)
 app_commands.add_command(bs)
 app_commands.add_command(bt)
