@@ -34,7 +34,7 @@ plt.show()
 
 # mixing and normalising the audio signals
 print(
-    "\nNext mixing and normalising the signals and write in into audio file.\nLook on the figure 2, then click X.\nFind the audio in this repo.")
+    "\nNext mixing and normalising the signals.\nLook on the figure 2, then click X.")
 _, nice_tone = generate_sine_wave(400, sample_rate, duration)
 _, noise_tone = generate_sine_wave(4000, sample_rate, duration)
 noise_tone = noise_tone * 0.3
