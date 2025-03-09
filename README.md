@@ -1,4 +1,4 @@
-#Algorithms
+#**Algorithms**
 
 ##author srt-2000
 
