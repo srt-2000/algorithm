@@ -44,12 +44,23 @@ For using this app you need install python packages:
 
 ##Installation
 
-To install - ypu have copy this repo and create .venv with requirement packages.
+To install - you have copy this repo and create .venv with requirement packages.
 
 
 ##Using
 
-The main commands:
+###START in terminal:
+
+            When you are inside your project and venv try command:
+
+                ~/xx/xx$: python main.py [name of command (see 'the main commands')]
+
+            or try help command to read all commands in terminal
+
+                ~/xx/xx$: python main.py --help
+
+    
+###The main commands:
 
       bf   Bloom filter algorithm
             It's show how works a Bloom filter for negative IP address.
